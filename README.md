@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/aereal/Data-Monad-Control.svg?branch=master)](https://travis-ci.org/aereal/Data-Monad-Control) [![Coverage Status](https://img.shields.io/coveralls/aereal/Data-Monad-Control/master.svg?style=flat)](https://coveralls.io/r/aereal/Data-Monad-Control?branch=master)
 # NAME
 
 Data::Monad::Control - It's new $module
