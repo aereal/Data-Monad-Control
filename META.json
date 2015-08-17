@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Exception handling with Monad",
    "author" : [
       "aereal <aereal@aereal.org>"
    ],
@@ -48,6 +48,8 @@
       },
       "test" : {
          "requires" : {
+            "Devel::Cover" : "0",
+            "Devel::Cover::Report::Coveralls" : "0",
             "Test::More" : "0.98"
          }
       }
