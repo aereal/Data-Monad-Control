@@ -42,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Data::Monad" : "0.08",
             "perl" : "5.008001"
          }
       },
@@ -52,5 +53,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/aereal/Data-Monad-Control/issues"
+      },
+      "homepage" : "https://github.com/aereal/Data-Monad-Control",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/aereal/Data-Monad-Control.git",
+         "web" : "https://github.com/aereal/Data-Monad-Control"
+      }
+   },
    "version" : "0.01"
 }
