@@ -3,9 +3,28 @@ use 5.008001;
 use strict;
 use warnings;
 
+use Data::Monad::Either qw( left right );
+use Exporter qw( import );
+
 our $VERSION = "0.01";
+our @EXPORT = qw( try );
 
-
+sub try (&) {
+  my ($try_clause) = @_;
+  my $wantarray = wantarray;
+  local $@;
+  my @ret = eval {
+    my @ret;
+    if ($wantarray) {
+      @ret = $try_clause->();
+    } elsif (defined $wantarray) {
+      $ret[0] = $try_clause->();
+    } else {
+      $try_clause->();
+    }
+  };
+  return $@ ? left($@) : right(@ret);
+}
 
 1;
 __END__
