@@ -33,15 +33,34 @@ __END__
 
 =head1 NAME
 
-Data::Monad::Control - It's new $module
+Data::Monad::Control - Exception handling with Monad
 
 =head1 SYNOPSIS
 
-    use Data::Monad::Control;
+    use Data::Monad::Control qw( try );
+
+    my $result = try {
+      write_to_file_may_die(...);
+    }; # => Data::Monad::Either
+    $result->flat_map(sub {
+      # ...
+    });
 
 =head1 DESCRIPTION
 
-Data::Monad::Control is ...
+Data::Monad::Control provides some functions to handle exceptions with monad.
+
+=head1 FUNCTIONS
+
+=over 4
+
+=item try($try_clause: CodeRef); # => Data::Monad::Either
+
+Takes a function that will die with some exception and runs it.
+
+Returns a left Either monad contains the exception if some exception caught, otherwise, returns a right Either monad contains the values from the given function.
+
+=back
 
 =head1 LICENSE
 
@@ -53,6 +72,10 @@ it under the same terms as Perl itself.
 =head1 AUTHOR
 
 aereal E<lt>aereal@aereal.orgE<gt>
+
+=head1 SEE ALSO
+
+L<Data::Monad>, L<Try::Tiny>
 
 =cut
 
